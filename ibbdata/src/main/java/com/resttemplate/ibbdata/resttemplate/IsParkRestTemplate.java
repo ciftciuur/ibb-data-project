@@ -27,7 +27,7 @@ public class IsParkRestTemplate {
                         HttpMethod.GET, null, new ParameterizedTypeReference<List<Park>>() {
                         });
         if (parkResponse != null && parkResponse.hasBody()) {
-            return parkResponse.getBody();
+            return  parkResponse.getBody();
         } else
             return new ArrayList<Park>();
     }

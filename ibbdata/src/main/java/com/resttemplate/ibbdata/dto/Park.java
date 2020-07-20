@@ -8,13 +8,12 @@ public class Park {
     //Park Id bilgisini içerir.
     //Unique alandır
     private int ParkID;
-
     //park adını içerir
     private String ParkAdi;
     //park enlem bilgisi
-    private double Latitude;
+    private Double Latitude;
     //park boylam bilgisi
-    private double Longitude;
+    private Double Longitude;
     //park toplam kapasite
     private int Kapasitesi;
     //park bos kapasite
