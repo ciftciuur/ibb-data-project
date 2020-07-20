@@ -13,17 +13,22 @@ import java.util.List;
 
 @RestController
 public class IsParkRestTemplate {
-    @Autowired
+
     private RestTemplate restTemplate;
 
     String url = "https://api.ibb.gov.tr/ispark/Park";
 
-    public void getParks() {
-        List<Park> parkList;
+    public List<Park> getParks() {
+        //TODO : kayıt yok api'ye ulaşıyor apiden dönen kayıt sayısı doğru fakat kayıtları almıyor
+        if (restTemplate == null)
+            restTemplate = new RestTemplate();
         ResponseEntity<List<Park>> parkResponse =
                 restTemplate.exchange(url,
                         HttpMethod.GET, null, new ParameterizedTypeReference<List<Park>>() {
                         });
-        parkList = parkResponse.getBody();
+        if (parkResponse != null && parkResponse.hasBody()) {
+            return parkResponse.getBody();
+        } else
+            return new ArrayList<Park>();
     }
 }
