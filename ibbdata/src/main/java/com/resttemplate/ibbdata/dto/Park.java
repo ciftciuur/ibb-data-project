@@ -1,109 +1,119 @@
 package com.resttemplate.ibbdata.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Park {
-
     //Park Id bilgisini içerir.
     //Unique alandır
-    private int ParkID;
+    @JsonProperty("ParkId")
+    private int parkId;
     //park adını içerir
-    private String ParkAdi;
+    @JsonProperty("ParkAdi")
+    private String parkAdi;
     //park enlem bilgisi
-    private Double Latitude;
+    @JsonProperty("Latitude")
+    private Double latitude;
     //park boylam bilgisi
-    private Double Longitude;
+    @JsonProperty("Longitude")
+    private Double longitude;
     //park toplam kapasite
-    private int Kapasitesi;
+    @JsonProperty("Kapasitesi")
+    private int kapasitesi;
     //park bos kapasite
-    private int BosKapasite;
+    @JsonProperty("BosKapasite")
+    private int bosKapasite;
     //park tipi(yol ustu,acik,kapali)
-    private String ParkTipi;
+    @JsonProperty("ParkTipi")
+    private String parkTipi;
     //parkin bulundugu ilce
-    private String Ilce;
+    @JsonProperty("Ilce")
+    private String ilce;
     //parka olan mesafe
-    private double Distance;
+    @JsonProperty("Distance")
+    private double distance;
     //ücretsiz parklanma süresi
-    private int UcretsizParklanmaDk;
+    @JsonProperty("UcretsizParklanmaDk")
+    private int ücretsizParklanmaDk;
 
-    public int getParkID() {
-        return ParkID;
+    public int getParkId() {
+        return parkId;
     }
 
-    public void setParkID(int parkID) {
-        ParkID = parkID;
+    public void setParkId(int parkId) {
+        this.parkId = parkId;
     }
 
     public String getParkAdi() {
-        return ParkAdi;
+        return parkAdi;
     }
 
     public void setParkAdi(String parkAdi) {
-        ParkAdi = parkAdi;
+        this.parkAdi = parkAdi;
     }
 
-    public double getLatitude() {
-        return Latitude;
+    public Double getLatitude() {
+        return latitude;
     }
 
-    public void setLatitude(double latitude) {
-        Latitude = latitude;
+    public void setLatitude(Double latitude) {
+        this.latitude = latitude;
     }
 
-    public double getLongitude() {
-        return Longitude;
+    public Double getLongitude() {
+        return longitude;
     }
 
-    public void setLongitude(double longitude) {
-        Longitude = longitude;
+    public void setLongitude(Double longitude) {
+        this.longitude = longitude;
     }
 
     public int getKapasitesi() {
-        return Kapasitesi;
+        return kapasitesi;
     }
 
     public void setKapasitesi(int kapasitesi) {
-        Kapasitesi = kapasitesi;
+        this.kapasitesi = kapasitesi;
     }
 
     public int getBosKapasite() {
-        return BosKapasite;
+        return bosKapasite;
     }
 
     public void setBosKapasite(int bosKapasite) {
-        BosKapasite = bosKapasite;
+        this.bosKapasite = bosKapasite;
     }
 
     public String getParkTipi() {
-        return ParkTipi;
+        return parkTipi;
     }
 
     public void setParkTipi(String parkTipi) {
-        ParkTipi = parkTipi;
+        this.parkTipi = parkTipi;
     }
 
     public String getIlce() {
-        return Ilce;
+        return ilce;
     }
 
     public void setIlce(String ilce) {
-        Ilce = ilce;
+        this.ilce = ilce;
     }
 
     public double getDistance() {
-        return Distance;
+        return distance;
     }
 
     public void setDistance(double distance) {
-        Distance = distance;
+        this.distance = distance;
     }
 
-    public int getUcretsizParklanmaDk() {
-        return UcretsizParklanmaDk;
+    public int getÜcretsizParklanmaDk() {
+        return ücretsizParklanmaDk;
     }
 
-    public void setUcretsizParklanmaDk(int ucretsizParklanmaDk) {
-        UcretsizParklanmaDk = ucretsizParklanmaDk;
+    public void setÜcretsizParklanmaDk(int ücretsizParklanmaDk) {
+        this.ücretsizParklanmaDk = ücretsizParklanmaDk;
     }
 }

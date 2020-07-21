@@ -4,6 +4,7 @@ package com.resttemplate.ibbdata.resttemplate;
 import com.resttemplate.ibbdata.dto.Park;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
@@ -19,7 +20,7 @@ public class IsParkRestTemplateTests {
             for (Park park : parks) {
                 if (park.getParkAdi() != null) {
                     System.out.println("Success !");
-                    break;
+                    System.out.println(park.getParkAdi());
                 } else {
                     System.out.println("not response record ! ");
                 }
@@ -28,4 +29,5 @@ public class IsParkRestTemplateTests {
             System.out.println("Oppss ! ");
         }
     }
+
 }
