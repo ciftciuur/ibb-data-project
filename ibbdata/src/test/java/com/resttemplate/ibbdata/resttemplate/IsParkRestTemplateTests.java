@@ -15,6 +15,7 @@ public class IsParkRestTemplateTests {
     private IsParkRestTemplate isParkRestTemplate = new IsParkRestTemplate();
 
 
+    @Test
     void getParksTest() {
         List<Park> parks = isParkRestTemplate.getParks();
         if (parks.size() > 0) {

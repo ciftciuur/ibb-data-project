@@ -13,6 +13,7 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ParkDetail {
 
+
     @JsonProperty("ParkID")
     private int parkId;
     @JsonProperty("ParkAdi")
