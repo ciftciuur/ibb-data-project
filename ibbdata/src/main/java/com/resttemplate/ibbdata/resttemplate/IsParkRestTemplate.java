@@ -1,7 +1,7 @@
 package com.resttemplate.ibbdata.resttemplate;
 
-import com.resttemplate.ibbdata.dto.Park;
-import com.resttemplate.ibbdata.dto.ParkDetail;
+import com.resttemplate.ibbdata.dto.ParkDto;
+import com.resttemplate.ibbdata.dto.ParkDetailDto;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -14,23 +14,22 @@ import java.util.List;
 @RestController
 public class IsParkRestTemplate {
 
+    private String urlDomain = "https://api.ibb.gov.tr/ispark/";
+    RestTemplate restTemplate = new RestTemplate();
 
-    public List<Park> getParks() {
-        String url = "https://api.ibb.gov.tr/ispark/Park";
-        RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<List<Park>> parkResponse =
-                restTemplate.exchange(url,
-                        HttpMethod.GET, null, new ParameterizedTypeReference<List<Park>>() {
+
+    public List<ParkDto> getParks() {
+        ResponseEntity<List<ParkDto>> parkResponse =
+                restTemplate.exchange(urlDomain + "Park",
+                        HttpMethod.GET, null, new ParameterizedTypeReference<List<ParkDto>>() {
                         });
         if (parkResponse != null && parkResponse.hasBody()) {
             return parkResponse.getBody();
         } else
-            return new ArrayList<Park>();
+            return new ArrayList<ParkDto>();
     }
 
-    public ParkDetail getParkDetail(int parkId) {
-        String url = "https://api.ibb.gov.tr/ispark/ParkDetay?id=" + parkId;
-        RestTemplate restTemplate = new RestTemplate();
-        return restTemplate.getForEntity(url, ParkDetail.class).getBody();
+    public ParkDetailDto getParkDetail(int parkId) {
+        return restTemplate.getForEntity(urlDomain + "ParkDetay?id=" + parkId, ParkDetailDto.class).getBody();
     }
 }

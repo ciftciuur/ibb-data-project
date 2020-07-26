@@ -6,12 +6,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ParkDetail {
+public class ParkDetailDto {
 
 
     @JsonProperty("ParkID")
@@ -45,7 +43,7 @@ public class ParkDetail {
     @JsonProperty("AreaPolygon")
     private List<double[][]> areaPolygon;
     @JsonProperty("Tarifeler")
-    private List<Tarifeler> tarifeler;
+    private List<TarifelerDto> tarifelerDTO;
     @JsonProperty("LokasyonAdi")
     private String lokasyonAdi;
 
@@ -161,12 +159,12 @@ public class ParkDetail {
         this.areaPolygon = areaPolygon;
     }
 
-    public List<Tarifeler> getTarifeler() {
-        return tarifeler;
+    public List<TarifelerDto> getTarifelerDTO() {
+        return tarifelerDTO;
     }
 
-    public void setTarifeler(List<Tarifeler> tarifeler) {
-        this.tarifeler = tarifeler;
+    public void setTarifelerDTO(List<TarifelerDto> tarifelerDTO) {
+        this.tarifelerDTO = tarifelerDTO;
     }
 
     public String getLokasyonAdi() {

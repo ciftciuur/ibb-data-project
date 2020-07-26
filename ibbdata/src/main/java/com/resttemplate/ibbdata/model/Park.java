@@ -1,47 +1,42 @@
-package com.resttemplate.ibbdata.dto;
+package com.resttemplate.ibbdata.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+
+@Document
+@Data
 public class Park {
-    //Park Id bilgisini içerir.
-    //Unique alandır
-    @JsonProperty("ParkId")
-    private int parkId;
-    //park adını içerir
-    @JsonProperty("ParkAdi")
+    @Id
+    private Long parkId;
+
     private String parkAdi;
-    //park enlem bilgisi
-    @JsonProperty("Latitude")
+
     private Double latitude;
-    //park boylam bilgisi
-    @JsonProperty("Longitude")
+
     private Double longitude;
-    //park toplam kapasite
-    @JsonProperty("Kapasitesi")
+
     private int kapasitesi;
-    //park bos kapasite
-    @JsonProperty("BosKapasite")
+
     private int bosKapasite;
-    //park tipi(yol ustu,acik,kapali)
-    @JsonProperty("ParkTipi")
+
     private String parkTipi;
-    //parkin bulundugu ilce
-    @JsonProperty("Ilce")
+
     private String ilce;
-    //parka olan mesafe
-    @JsonProperty("Distance")
+
     private double distance;
-    //ücretsiz parklanma süresi
-    @JsonProperty("UcretsizParklanmaDk")
+
     private int ücretsizParklanmaDk;
 
-    public int getParkId() {
+    public Long getParkId() {
         return parkId;
     }
 
-    public void setParkId(int parkId) {
+    public void setParkId(Long parkId) {
         this.parkId = parkId;
     }
 
